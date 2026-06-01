@@ -137,7 +137,7 @@ function RibbonDecoration({ className, color }: { className: string; color: stri
 function FloatingEmoji({ emoji, delay, x, y, size }: { emoji: string; delay: number; x: number; y: number; size: number }) {
   return (
     <motion.div
-      className="absolute pointer-events-none select-none"
+      className="absolute z-30 pointer-events-none select-none"
       style={{ left: `${x}%`, top: `${y}%`, fontSize: size }}
       animate={{
         y: [0, -50, 0],
@@ -188,7 +188,7 @@ function DreamyBackground() {
     "bg-sky-200/60",
     "bg-cyan-200/60",
     "bg-blue-200/50",
-    "bg-pink-200/50", 
+    "bg-sky-200/50", 
     "bg-purple-200/40",
     "bg-indigo-200/50",
   ]
@@ -197,35 +197,22 @@ function DreamyBackground() {
     "text-sky-300/70",
     "text-cyan-300/70",
     "text-blue-300/60",
-    "text-pink-300/60",
+    "text-sky-300/60",
   ]
 
   // 可愛い絵文字リスト
   const cuteEmojis = [
-    { emoji: "💙", count: 10 },
-    { emoji: "💗", count: 8 },
-    { emoji: "🩵", count: 12 },
-    { emoji: "🩷", count: 7 },
-    { emoji: "⭐", count: 8 },
-    { emoji: "✨", count: 15 },
-    { emoji: "🌸", count: 6 },
-    { emoji: "🎀", count: 6 },
-    { emoji: "☁️", count: 8 },
-    { emoji: "🫧", count: 10 },
-    { emoji: "💫", count: 8 },
-    { emoji: "🦋", count: 5 },
-    { emoji: "🍬", count: 4 },
-    { emoji: "🧁", count: 3 },
-    { emoji: "🌈", count: 3 },
-  ]
+  { emoji: "🩵", count: 3 },
+  { emoji: "✨", count: 5 },
+  { emoji: "☁️", count: 2 },
+  { emoji: "🫧", count: 2 },
+  { emoji: "⭐️", count: 2 },
+]
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
+    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       {/* 多層グラデーション背景 - もっとカラフルに */}
-      <div className="absolute inset-0 bg-gradient-to-b from-sky-200 via-cyan-100 to-sky-200" />
-      <div className="absolute inset-0 bg-gradient-to-r from-pink-200/60 via-transparent to-purple-200/60" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/40 via-transparent to-pink-200/40" />
-      <div className="absolute inset-0 bg-gradient-to-bl from-violet-100/30 via-transparent to-rose-100/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-100 via-cyan-50 to-sky-200" />
       
       {/* ふわふわ雲模様 SVG パターン - もっと目立つように */}
       <div className="absolute inset-0 opacity-50">
@@ -245,15 +232,7 @@ function DreamyBackground() {
         </svg>
       </div>
       
-      {/* 水玉パターンオーバーレイ - もっと濃く */}
-      <div className="absolute inset-0 pattern-polka opacity-60" />
-      
-      {/* ハート柄オーバーレイ - もっと濃く */}
-      <div className="absolute inset-0 pattern-hearts opacity-70" />
-      
-      {/* 星柄オーバーレイ - もっと濃く */}
-      <div className="absolute inset-0 pattern-stars opacity-50" />
-      
+
       {/* 大きなぼかしオーブ - もっと明るく鮮やかに */}
       <motion.div
         className="absolute -top-20 -left-20 w-[900px] h-[900px] rounded-full bg-gradient-to-br from-sky-400/50 via-cyan-300/40 to-blue-300/30 blur-3xl"
@@ -265,7 +244,7 @@ function DreamyBackground() {
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-1/4 -right-20 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-pink-300/60 via-rose-200/50 to-purple-300/40 blur-3xl"
+        className="absolute top-1/4 -right-20 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-sky-300/60 via-rose-200/50 to-purple-300/40 blur-3xl"
         animate={{
           scale: [1.1, 0.9, 1.1],
           x: [0, -60, 0],
@@ -274,7 +253,7 @@ function DreamyBackground() {
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute -bottom-40 -right-40 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-purple-200/50 via-pink-100/40 to-sky-200/30 blur-3xl"
+        className="absolute -bottom-40 -right-40 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-purple-200/50 via-sky-100/40 to-sky-200/30 blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           y: [0, -60, 0],
@@ -291,7 +270,7 @@ function DreamyBackground() {
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/4 left-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-yellow-100/30 via-orange-50/20 to-pink-100/30 blur-3xl"
+        className="absolute bottom-1/4 left-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-yellow-100/30 via-orange-50/20 to-sky-100/30 blur-3xl"
         animate={{
           scale: [0.9, 1.2, 0.9],
           x: [0, -30, 30, 0],
@@ -301,7 +280,7 @@ function DreamyBackground() {
       
       {/* 追加の小さなぼかしオーブ */}
       <motion.div
-        className="absolute top-[20%] left-[60%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-pink-300/40 to-rose-200/30 blur-2xl"
+        className="absolute top-[20%] left-[60%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-sky-300/40 to-rose-200/30 blur-2xl"
         animate={{
           scale: [1, 1.5, 1],
           y: [0, -30, 0],
@@ -397,14 +376,6 @@ function DreamyBackground() {
           color={bubbleColors[i % bubbleColors.length]}
         />
       ))}
-
-      {/* リボン装飾 - もっと増やす */}
-      <RibbonDecoration className="top-20 left-[12%]" color="text-pink-300" />
-      <RibbonDecoration className="top-[30%] right-[8%]" color="text-sky-300" />
-      <RibbonDecoration className="top-[55%] left-[6%]" color="text-purple-300" />
-      <RibbonDecoration className="bottom-40 right-[15%]" color="text-cyan-300" />
-      <RibbonDecoration className="bottom-24 left-[20%]" color="text-rose-300" />
-      <RibbonDecoration className="top-[70%] right-[30%]" color="text-indigo-300" />
     </div>
   )
 }
@@ -429,7 +400,7 @@ function Navigation() {
             >
               <Cloud className="w-6 h-6 text-primary" />
             </motion.div>
-            <span className="font-bold text-lg gradient-text">Yuki.dev</span>
+            <span className="font-bold text-lg gradient-text">Karen.dev</span>
             <motion.div
               animate={{ scale: [1, 1.3, 1], rotate: [0, 360] }}
               transition={{ duration: 3, repeat: Infinity }}
@@ -453,7 +424,7 @@ function Navigation() {
                     transition={{ duration: 1.5, repeat: Infinity }}
                     className="absolute -top-1 -right-1"
                   >
-                    <Heart className="w-3 h-3 text-pink-400 fill-pink-400" />
+                    <Heart className="w-3 h-3 text-sky-400 fill-sky-400" />
                   </motion.div>
                 )}
               </motion.a>
@@ -477,7 +448,7 @@ function Navigation() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-100 to-rose-100 flex items-center justify-center text-accent-foreground fluffy-shadow border border-white/60"
+              className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-100 to-rose-100 flex items-center justify-center text-accent-foreground fluffy-shadow border border-white/60"
             >
               <Linkedin className="w-4 h-4" />
             </motion.a>
@@ -508,12 +479,12 @@ function HeroSection() {
           >
             <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
           </motion.div>
-          <span className="text-sm font-bold text-primary">Information Science Student</span>
+          <span className="text-sm font-bold text-primary">self-introduction</span>
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
           >
-            <Sparkles className="w-5 h-5 text-pink-400" />
+            <Sparkles className="w-5 h-5 text-sky-400" />
           </motion.div>
         </motion.div>
         
@@ -528,7 +499,7 @@ function HeroSection() {
             animate={{ rotate: [0, 2, -2, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
           >
-            I&apos;m Yuki
+            I&apos;m Karen
           </motion.span>
           <motion.span
             className="inline-flex items-center ml-3"
@@ -542,9 +513,7 @@ function HeroSection() {
         {/* サブタイトル */}
         <motion.div variants={fadeInUp} className="mb-4">
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-bold inline-flex items-center gap-3 bg-white/60 px-6 py-3 rounded-full fluffy-shadow">
-            <Code2 className="w-5 h-5 text-primary" />
-            Web Development & Machine Learning
-            <Brain className="w-5 h-5 text-purple-400" />
+            髙橋花怜です
           </p>
         </motion.div>
         
@@ -552,15 +521,15 @@ function HeroSection() {
           variants={fadeInUp}
           className="text-lg text-muted-foreground/80 mb-12 max-w-xl mx-auto leading-relaxed"
         >
-          {"ふわふわなデザインと使いやすいUIが大好き！"}
+          {"立命館大学情報理工学部一回生です！"}
           <br />
           <span className="inline-flex items-center gap-1">
-            {"一緒に素敵なプロダクトを作りましょう"}
+            {"サークルはRistとRi-Oneとpapillonに入っています"}
             <motion.span
               animate={{ scale: [1, 1.3, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <Heart className="w-4 h-4 text-pink-400 fill-pink-400 inline" />
+              <Heart className="w-4 h-4 text-sky-400 fill-sky-400 inline" />
             </motion.span>
           </span>
         </motion.p>
@@ -593,7 +562,7 @@ function HeroSection() {
           >
             <Mail className="w-5 h-5 text-primary" />
             Say Hello
-            <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
+            <Heart className="w-4 h-4 text-sky-400 fill-sky-400" />
           </motion.a>
         </motion.div>
       </motion.div>
@@ -642,7 +611,7 @@ function AboutSection() {
             className="relative order-2 md:order-1"
           >
             <motion.div 
-              className="aspect-square rounded-[3rem] bg-gradient-to-br from-sky-100 via-purple-50 to-pink-100 p-8 relative overflow-hidden fluffy-shadow-lg border-4 border-white/80 pattern-polka"
+              className="aspect-square rounded-[3rem] bg-gradient-to-br from-sky-100 via-purple-50 to-sky-100 p-8 relative overflow-hidden fluffy-shadow-lg border-4 border-white/80 pattern-polka"
               whileHover={{ rotate: 2, scale: 1.02 }}
             >
               {/* 装飾リング */}
@@ -672,11 +641,11 @@ function AboutSection() {
 
               {/* 角装飾 */}
               <motion.div 
-                className="absolute top-4 right-4 w-14 h-14 rounded-full bg-gradient-to-br from-pink-200 to-rose-200 flex items-center justify-center"
+                className="absolute top-4 right-4 w-14 h-14 rounded-full bg-gradient-to-br from-sky-200 to-rose-200 flex items-center justify-center"
                 animate={{ scale: [1, 1.2, 1], rotate: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <Heart className="w-6 h-6 text-pink-500 fill-pink-500" />
+                <Heart className="w-6 h-6 text-sky-500 fill-sky-500" />
               </motion.div>
               <motion.div 
                 className="absolute bottom-8 left-4 w-12 h-12 rounded-full bg-gradient-to-br from-sky-200 to-blue-200 flex items-center justify-center"
@@ -700,14 +669,14 @@ function AboutSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.08, rotate: -3 }}
-              className="absolute -bottom-6 -right-4 bg-white rounded-2xl p-4 fluffy-shadow-lg flex items-center gap-3 border-2 border-pink-100 pattern-hearts"
+              className="absolute -bottom-6 -right-4 bg-white rounded-2xl p-4 fluffy-shadow-lg flex items-center gap-3 border-2 border-sky-100 pattern-hearts"
             >
               <motion.div 
-                className="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center"
+                className="w-14 h-14 rounded-xl bg-gradient-to-br from-sky-200 to-purple-200 flex items-center justify-center"
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <Heart className="w-7 h-7 text-pink-500 fill-pink-500" />
+                <Heart className="w-7 h-7 text-sky-500 fill-sky-500" />
               </motion.div>
               <div>
                 <p className="font-extrabold text-foreground">3+ Years</p>
@@ -745,7 +714,7 @@ function AboutSection() {
                   animate={{ rotate: [0, 20, 0] }}
                   transition={{ duration: 1, repeat: Infinity }}
                 >
-                  <Heart className="w-8 h-8 text-pink-400 fill-pink-400" />
+                  <Heart className="w-8 h-8 text-sky-400 fill-sky-400" />
                 </motion.span>
               </span>
             </motion.h2>
@@ -758,13 +727,13 @@ function AboutSection() {
               className="space-y-4 text-muted-foreground leading-relaxed"
             >
               <div className="bg-white/80 rounded-2xl p-5 fluffy-shadow border-2 border-sky-100/60 pattern-dots">
-                <p>{"東京の大学で情報工学を学んでいます。プログラミングを始めたのは高校生の時で、最初に作ったのはシンプルなToDoアプリでした。"}</p>
+                <p>{"立命館大学情報理工学部の一回生です！教職課程をとっています。"}</p>
               </div>
               <div className="bg-white/80 rounded-2xl p-5 fluffy-shadow border-2 border-purple-100/60 pattern-stripes">
-                <p>{"今はフロントエンド開発と機械学習に特に興味があり、React/Next.jsを使ったWebアプリケーション開発や、Pythonでのデータ分析に取り組んでいます。"}</p>
+                <p>{"今は GCI2026summerに参加していて、pythonでのデータの分析や機械学習に取り組んでいます！！"}</p>
               </div>
-              <div className="bg-white/80 rounded-2xl p-5 fluffy-shadow border-2 border-pink-100/60 pattern-hearts">
-                <p>{"コードを書くこと以外では、カフェ巡りと写真撮影が��味です。新しい技術を学ぶことが大好きで、常に成長し続けたいと思っています！"}</p>
+              <div className="bg-white/80 rounded-2xl p-5 fluffy-shadow border-2 border-sky-100/60 pattern-hearts">
+                <p>{"趣味は美味しいものを食べることです！おすすめのカフェやご飯のお店などがあれば教えて欲しいです♪"}</p>
               </div>
             </motion.div>
           </div>
@@ -810,10 +779,10 @@ function SkillsSection() {
       icon: Palette,
       title: "Design",
       description: "Figma, Adobe XD, UI/UX Design",
-      gradient: "from-pink-100 via-rose-50 to-red-100",
-      iconBg: "bg-gradient-to-br from-pink-200 to-rose-200",
-      iconColor: "text-pink-600",
-      borderColor: "border-pink-200",
+      gradient: "from-sky-100 via-rose-50 to-red-100",
+      iconBg: "bg-gradient-to-br from-sky-200 to-rose-200",
+      iconColor: "text-sky-600",
+      borderColor: "border-sky-200",
       pattern: "pattern-hearts"
     }
   ]
@@ -893,7 +862,7 @@ function SkillsSection() {
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
                       >
-                        <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
+                        <Heart className="w-4 h-4 text-sky-400 fill-sky-400" />
                       </motion.span>
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed font-medium">{skill.description}</p>
@@ -955,7 +924,7 @@ function ProjectsSection() {
               animate={{ scale: [1, 1.3, 1], rotate: [0, 10, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Sparkles className="w-6 h-6 text-pink-400" />
+              <Sparkles className="w-6 h-6 text-sky-400" />
             </motion.div>
             <span className="text-primary font-extrabold">Projects</span>
             <motion.div
@@ -972,7 +941,7 @@ function ProjectsSection() {
               transition={{ duration: 1.5, repeat: Infinity }}
               className="inline-block ml-2"
             >
-              <Heart className="w-8 h-8 text-pink-400 fill-pink-400 inline" />
+              <Heart className="w-8 h-8 text-sky-400 fill-sky-400 inline" />
             </motion.span>
           </h2>
         </motion.div>
@@ -1004,7 +973,7 @@ function ProjectsSection() {
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    <Heart className="w-5 h-5 text-pink-400/50 fill-pink-400/50" />
+                    <Heart className="w-5 h-5 text-sky-400/50 fill-sky-400/50" />
                   </motion.div>
                   
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative">
@@ -1069,7 +1038,7 @@ function ContactSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-sky-100 via-purple-50 to-pink-100 rounded-[3rem] p-10 md:p-16 text-center fluffy-shadow-lg border-4 border-white/80 pattern-polka relative overflow-hidden"
+          className="bg-gradient-to-br from-sky-100 via-purple-50 to-sky-100 rounded-[3rem] p-10 md:p-16 text-center fluffy-shadow-lg border-4 border-white/80 pattern-polka relative overflow-hidden"
         >
           {/* 角装飾 */}
           <motion.div
@@ -1084,7 +1053,7 @@ function ContactSection() {
             animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <Heart className="w-8 h-8 text-pink-400/60 fill-pink-400/60" />
+            <Heart className="w-8 h-8 text-sky-400/60 fill-sky-400/60" />
           </motion.div>
           <motion.div
             className="absolute bottom-6 left-6"
@@ -1119,17 +1088,17 @@ function ContactSection() {
               transition={{ duration: 1, repeat: Infinity }}
               className="inline-block ml-2"
             >
-              <Heart className="w-8 h-8 text-pink-400 fill-pink-400 inline" />
+              <Heart className="w-8 h-8 text-sky-400 fill-sky-400 inline" />
             </motion.span>
           </h2>
           
           <p className="text-lg text-muted-foreground mb-10 max-w-lg mx-auto leading-relaxed font-medium bg-white/50 p-4 rounded-2xl">
-            {"新しいプロジェクトやコラボレーションのお話、お気軽にご連絡ください！一緒に素敵なものを作りましょう "}
+            {"コンタクトはこちらから"}
             <Sparkles className="w-4 h-4 text-yellow-400 inline" />
           </p>
           
           <motion.a
-            href="mailto:yuki@example.com"
+            href="mailto:is0886ex@ed.ritsumei.ac.jp"
             whileHover={{ scale: 1.08, y: -5 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-primary via-chart-5 to-accent text-white rounded-full font-extrabold fluffy-shadow-lg text-lg animate-rainbow"
@@ -1140,7 +1109,7 @@ function ContactSection() {
             >
               <Sparkles className="w-6 h-6" />
             </motion.div>
-            yuki@example.com
+            is0886ex@ed.ritsumei.ac.jp
             <Star className="w-5 h-5 fill-white" />
           </motion.a>
           
@@ -1189,7 +1158,7 @@ function Footer() {
           >
             <Cloud className="w-6 h-6 text-primary" />
           </motion.div>
-          <span className="font-extrabold gradient-text text-lg">Yuki.dev</span>
+          <span className="font-extrabold gradient-text text-lg">Karen.dev</span>
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
@@ -1205,7 +1174,7 @@ function Footer() {
             transition={{ duration: 1, repeat: Infinity }}
             className="inline-flex"
           >
-            <Heart className="w-5 h-5 text-pink-400 fill-pink-400" />
+            <Heart className="w-5 h-5 text-sky-400 fill-sky-400" />
           </motion.span>
           {" and lots of "}
           <Coffee className="w-4 h-4 text-amber-600 inline" />
@@ -1225,13 +1194,15 @@ export default function Portfolio() {
   return (
     <main className="relative min-h-screen overflow-x-hidden">
       <DreamyBackground />
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
-      <Footer />
+      <div className="relative z-10">
+        <Navigation />
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+        <Footer />
+      </div>
     </main>
   )
 }
