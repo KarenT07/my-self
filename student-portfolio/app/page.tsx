@@ -522,7 +522,7 @@ function HeroSection() {
           variants={fadeInUp}
           className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 tracking-tight"
         >
-          <span className="text-foreground">Hello! </span>
+          <span className="text-foreground">Hello!! </span>
           <motion.span 
             className="gradient-text inline-block"
             animate={{ rotate: [0, 2, -2, 0] }}
