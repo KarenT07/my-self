@@ -204,9 +204,9 @@ function DreamyBackground() {
   const cuteEmojis = [
   { emoji: "🩵", count: 3 },
   { emoji: "✨", count: 5 },
-  { emoji: "☁️", count: 2 },
-  { emoji: "🫧", count: 2 },
-  { emoji: "⭐️", count: 2 },
+  { emoji: "☁️", count: 5 },
+  { emoji: "🫧", count: 5 },
+  { emoji: "⭐️", count: 5 },
 ]
 
   return (
@@ -319,7 +319,7 @@ function DreamyBackground() {
       <CloudShape className="bottom-[15%] left-[50%]" delay={7} scale={0.95} />
 
       {/* キラキラスパークル - もっと増やす */}
-      {[...Array(35)].map((_, i) => (
+      {[...Array(20)].map((_, i) => (
         <SparkleEffect
           key={`sparkle-${i}`}
           delay={i * 0.3}
@@ -329,7 +329,7 @@ function DreamyBackground() {
       ))}
 
       {/* キラキラ星 */}
-      {[...Array(30)].map((_, i) => (
+      {[...Array(20)].map((_, i) => (
         <TwinkleStar
           key={`star-${i}`}
           delay={i * 0.2}
@@ -501,13 +501,7 @@ function HeroSection() {
           >
             I&apos;m Karen
           </motion.span>
-          <motion.span
-            className="inline-flex items-center ml-3"
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <span className="text-4xl md:text-5xl">{"(๑>◡<๑)"}</span>
-          </motion.span>
+        
         </motion.h1>
         
         {/* サブタイトル */}
