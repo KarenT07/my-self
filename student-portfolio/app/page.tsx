@@ -673,8 +673,7 @@ function AboutSection() {
                 <Heart className="w-7 h-7 text-sky-500 fill-sky-500" />
               </motion.div>
               <div>
-                <p className="font-extrabold text-foreground">3+ Years</p>
-                <p className="text-xs text-muted-foreground font-medium">Coding Journey</p>
+                <p className="font-extrabold text-foreground">mbtiはesfjです！</p>
               </div>
             </motion.div>
           </motion.div>
