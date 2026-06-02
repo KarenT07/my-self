@@ -212,10 +212,10 @@ function DreamyBackground() {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       {/* 多層グラデーション背景 - もっとカラフルに */}
-      <div className="absolute inset-0 bg-gradient-to-b from-sky-100 via-cyan-50 to-sky-200" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-sky-50 to-violet-50" />
       
       {/* ふわふわ雲模様 SVG パターン - もっと目立つように */}
-      <div className="absolute inset-0 opacity-50">
+      <div className="absolute inset-0 opacity-20">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="clouds" x="0" y="0" width="180" height="90" patternUnits="userSpaceOnUse">
@@ -235,7 +235,7 @@ function DreamyBackground() {
 
       {/* 大きなぼかしオーブ - もっと明るく鮮やかに */}
       <motion.div
-        className="absolute -top-20 -left-20 w-[900px] h-[900px] rounded-full bg-gradient-to-br from-sky-400/50 via-cyan-300/40 to-blue-300/30 blur-3xl"
+        className="absolute -top-20 -left-20 w-[900px] h-[900px] rounded-full bg-gradient-to-br from-white/40 via-sky-100/30 to-violet-100/20 blur-3xl"
         animate={{
           scale: [1, 1.3, 1],
           x: [0, 80, 0],
@@ -244,7 +244,7 @@ function DreamyBackground() {
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-1/4 -right-20 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-sky-300/60 via-rose-200/50 to-purple-300/40 blur-3xl"
+        className="absolute top-1/4 -right-20 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-white/40 via-sky-50/30 to-violet-50/20 blur-3xl"
         animate={{
           scale: [1.1, 0.9, 1.1],
           x: [0, -60, 0],
@@ -253,7 +253,7 @@ function DreamyBackground() {
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute -bottom-40 -right-40 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-purple-200/50 via-sky-100/40 to-sky-200/30 blur-3xl"
+        className="absolute -bottom-40 -right-40 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-white/40 via-sky-50/30 to-violet-50/20 blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           y: [0, -60, 0],
@@ -262,7 +262,7 @@ function DreamyBackground() {
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-1/2 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-cyan-200/50 via-sky-100/40 to-blue-200/30 blur-3xl"
+        className="absolute top-1/2 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-white/30 via-sky-50/20 to-violet-50/20 blur-3xl"
         animate={{
           scale: [1, 1.4, 1],
           rotate: [0, 20, 0],
@@ -280,7 +280,7 @@ function DreamyBackground() {
       
       {/* 追加の小さなぼかしオーブ */}
       <motion.div
-        className="absolute top-[20%] left-[60%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-sky-300/40 to-rose-200/30 blur-2xl"
+        className="absolute top-[20%] left-[60%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-white/30 to-sky-50/20 blur-2xl"
         animate={{
           scale: [1, 1.5, 1],
           y: [0, -30, 0],
@@ -700,7 +700,7 @@ function AboutSection() {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight"
             >
-              {"ものづくりが"}
+              {"人と話すことが"}
               <br />
               <span className="gradient-text inline-flex items-center gap-2">
                 {"大好きです！"}
