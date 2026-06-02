@@ -202,7 +202,7 @@ function DreamyBackground() {
 
   // 可愛い絵文字リスト
   const cuteEmojis = [
-  { emoji: "🩵", count: 3 },
+  { emoji: "🩵", count: 5 },
   { emoji: "✨", count: 5 },
   { emoji: "☁️", count: 5 },
   { emoji: "🫧", count: 5 },
